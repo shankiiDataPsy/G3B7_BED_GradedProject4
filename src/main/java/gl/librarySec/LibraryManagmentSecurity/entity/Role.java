@@ -21,4 +21,7 @@ public class Role {
     private long id;
     private String rname;
 
+    public Role(String rname) {
+        this.rname = rname;
+    }
 }

@@ -35,14 +35,13 @@ public class User {
     private String email;
 
 
-
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    @JsonIgnore
     private List<Role> roles = new ArrayList<Role>();
 
     public User(String username, String password, String fname, String lname, String course, String country, String email, List<Role> roles) {
